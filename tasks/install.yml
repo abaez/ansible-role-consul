@@ -1,0 +1,15 @@
+---
+- name: download consul
+  get_url:
+    src: "https://releases.hashicorp.com/consul/{{ consul.version }}/consul_{{ consul.version }}_linux_{{ consul.arch }}.zip"
+    dest: /tmp/consul.zip
+
+- name: extract consul
+  unarchive:
+    src: /tmp/consul.zip
+    dest: /usr/bin
+
+- name: delete consul.zip
+  file:
+    dest: /tmp/consul.zip
+    state: absent
