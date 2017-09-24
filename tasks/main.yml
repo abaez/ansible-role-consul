@@ -4,3 +4,6 @@
 
 - name: install consul
   include: "install.yml"
+
+- name: configure consul
+  include: "configure.yml"

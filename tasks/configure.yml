@@ -1,0 +1,16 @@
+---
+
+- name: make configured data_dir
+  file:
+    dest: "{{ consul.config.data_dir }}"
+    state: present
+    type: directory
+    recurse: yes
+  when: consul.apply
+
+- name: apply _server.json file
+  template:
+    src: _server.json.j2
+    dest: "{{ consul.config.dir }}"
+  when: consul.apply
+

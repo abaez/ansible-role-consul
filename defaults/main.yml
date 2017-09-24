@@ -3,7 +3,9 @@
 consul:
   version: 0.9.3
   arch: amd64
+  apply: yes
   config:
+    dir: /etc/consul.d
     datacenter: example_dc
     data_dir: /opt/consul
     log_level: DEBUG
