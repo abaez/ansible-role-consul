@@ -3,3 +3,10 @@
 consul:
   version: 0.9.3
   arch: amd64
+  config:
+    datacenter: example_dc
+    data_dir: /opt/consul
+    log_level: DEBUG
+    node_name: changeMe
+    bind: 0.0.0.0
+
