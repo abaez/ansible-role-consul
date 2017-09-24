@@ -1,2 +1,6 @@
 ---
 # defaults file for template
+consul:
+  version: 0.9.3
+  arch: amd64
+  flags: -clustr-addr consul-master

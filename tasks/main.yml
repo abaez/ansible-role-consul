@@ -1,2 +1,6 @@
 ---
-# tasks file for template
+- name: Install dependencies
+  include: "os_family/{{ ansible_os_family }}.yml"
+
+- name: install consul
+  include: "install.yml"

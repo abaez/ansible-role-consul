@@ -1,14 +1,14 @@
-Role Name
+Consul
 =========
 [![license][2i]][2p]
 [![twitter][3i]][3p]
 
-A brief description of the role goes here.
+An base for [consul].
 
 Description
 -----------
 
-Give a description
+Installs [consul] with little configuration as possible on a host. Built to be a dependency for [hashicorp]'s [nomad].
 
 Role Variables
 --------------
