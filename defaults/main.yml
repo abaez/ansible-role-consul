@@ -1,14 +1,24 @@
 ---
 # defaults file for template
 consul:
+  # consul version
   version: 0.9.3
+  # consul architecture
   arch: amd64
+  # use _server.json
   apply: yes
+  # _server.json defaults
   config:
+    # config_dir
     dir: /etc/consul.d
+    # datacenter name
     datacenter: example_dc
+    # data directory for consul
     data_dir: /opt/consul
+    # log level
     log_level: DEBUG
+    # host node name
     node_name: changeMe
+    # which ip to bind to
     bind: 0.0.0.0
 
