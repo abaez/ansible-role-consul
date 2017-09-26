@@ -1,5 +1,12 @@
 ---
 
+- name: make configured config_dir
+  file:
+    dest: "{{ consul.config.dir }}"
+    state: present
+    type: directory
+    recurse: yes
+
 - name: make configured data_dir
   file:
     dest: "{{ consul.config.data_dir }}"
