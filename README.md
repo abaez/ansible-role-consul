@@ -70,6 +70,7 @@ Author Information
 [1]: https://keybase.io/baez
 [2]: ./defaults/main.yml
 [3]: ./templates/_server.json.j2
+[4]: https://ansible.com
 
 [2i]: https://img.shields.io/badge/license-BSD_2-green.svg
 [2p]: ./LICENSE
