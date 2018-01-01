@@ -1,15 +1,19 @@
 ---
-- name: download consul
-  get_url:
-    src: "https://releases.hashicorp.com/consul/{{ consul.version }}/consul_{{ consul.version }}_linux_{{ consul.arch }}.zip"
-    dest: /tmp/consul.zip
 
-- name: extract consul
+- name: get platform
+  set_fact:
+    consul_arch: "amd64"
+  when: ansible_architecture == "x86_64"
+
+- name: get platform
+  set_fact:
+    consul_arch: "{{ ansible_architecture }}"
+  when:
+    - ansible_architecture != "x86_64"
+    - ansible_architecture != "x86"
+
+- name: extract and install consul
   unarchive:
-    src: /tmp/consul.zip
-    dest: /usr/bin
-
-- name: delete consul.zip
-  file:
-    dest: /tmp/consul.zip
-    state: absent
+    src: "https://releases.hashicorp.com/consul/{{ consul_version }}/consul_{{ consul_version }}_linux_{{ consul_arch }}.zip"
+    dest: "{{ consul_bin_path }}/"
+    remote_src: yes
