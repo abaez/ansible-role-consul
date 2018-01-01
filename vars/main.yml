@@ -1,2 +1,7 @@
 ---
-# vars file for template
+
+# consul configurations' path
+consul_config_path: /etc/consul.d
+
+# consul binary path
+consul_bin_path: /usr/local/bin
