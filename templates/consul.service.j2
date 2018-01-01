@@ -8,7 +8,7 @@ After=network-online.target
 User=consul
 Group=consul
 Restart=on-failure
-ExecStart=/usr/bin/consul agent -config-dir={{ consul.config.dir }}
+ExecStart={{ consul_bin_path }}/consul agent -config-dir={{ consul_config_path }}
 ExecReload=/usr/bin/kill -s SIGINT $MAINPID
 
 KillSignal=SIGINT
