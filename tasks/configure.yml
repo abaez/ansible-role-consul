@@ -2,24 +2,22 @@
 
 - name: make configured config_dir
   file:
-    dest: "{{ consul.config.dir }}"
-    state: present
-    type: directory
+    dest: "{{ consul_config_path }}/"
+    state: directory
     recurse: yes
 
 - name: make configured data_dir
   file:
-    dest: "{{ consul.config.data_dir }}"
-    state: present
-    type: directory
+    dest: "{{ consul_server.data_dir }}/"
+    state: directory
     recurse: yes
-  when: consul.apply
+  when: use_consul_server
 
 - name: apply _server.json file
   template:
     src: _server.json.j2
-    dest: "{{ consul.config.dir }}"
-  when: consul.apply
+    dest: "{{ consul_config_path }}/"
+  when: use_consul_server
 
 - name: apply systemd service file
   template:
