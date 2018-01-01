@@ -22,12 +22,5 @@
 - name: apply systemd service file
   template:
     src: consul.service.j2
-    dest: /usr/lib/systemd/system/consul.service
-
-- name: enable consul service
-  systemd:
-    name: consul.service
-    state: started
-    enabled: yes
-    masked: no
-    daemon_reload: yes
+    dest: /etc/systemd/system/consul.service
+  notify: enable consul

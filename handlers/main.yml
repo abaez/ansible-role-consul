@@ -1,2 +1,9 @@
 ---
-# handlers file for template
+
+- name: enable consul
+  systemd:
+    name: consul.service
+    state: started
+    enabled: yes
+    masked: no
+    daemon_reload: yes
