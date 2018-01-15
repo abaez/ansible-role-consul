@@ -1,22 +1,32 @@
 ---
 
+- name: create consul user
+  user:
+    name: consul
+    home: "{{ consul_config_path }}"
+    system: yes
+
 - name: make configured config_dir
   file:
     dest: "{{ consul_config_path }}/"
     state: directory
-    recurse: yes
+    owner: consul
+    group: consul
 
 - name: make configured data_dir
   file:
     dest: "{{ consul_server.data_dir }}/"
     state: directory
-    recurse: yes
+    owner: consul
+    group: consul
   when: use_consul_server
 
 - name: apply _server.json file
   template:
     src: _server.json.j2
     dest: "{{ consul_config_path }}/"
+    owner: consul
+    group: consul
   when: use_consul_server
 
 - name: apply systemd service file
@@ -24,3 +34,4 @@
     src: consul.service.j2
     dest: /etc/systemd/system/consul.service
   notify: enable consul
+

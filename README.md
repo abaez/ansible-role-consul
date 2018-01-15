@@ -34,9 +34,9 @@ use_consul_server: yes
 # _server.json defaults
 consul_server:
   # datacenter name
-  datacenter: some_dc
+  datacenter: some-dc
   # data directory for consul
-  data_dir: /opt/consul
+  data_dir: /var/consul
   # log level
   log_level: DEBUG
   # host node name
