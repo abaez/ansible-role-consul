@@ -6,6 +6,9 @@ consul_version: 1.0.2
 # use _server.json
 use_consul_server: yes
 
+# consul default bind ip
+consul_bind: "::1"
+
 # _server.json defaults
 consul_server:
   # datacenter name
