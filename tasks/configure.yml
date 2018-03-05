@@ -23,7 +23,7 @@
 
 - name: apply _server.json file
   template:
-    src: _server.json.j2
+    src: _server.hcl.j2
     dest: "{{ consul_config_path }}/"
     owner: consul
     group: consul
