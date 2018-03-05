@@ -2,7 +2,7 @@
 
 
 # consul version
-consul_version: 1.0.2
+consul_version: 1.0.6
 # use _server.json
 use_consul_server: yes
 
@@ -19,6 +19,4 @@ consul_server:
   log_level: DEBUG
   # host node name
   node_name: ChangeMe
-  # which ip to bind to
-  bind: 0.0.0.0
 
