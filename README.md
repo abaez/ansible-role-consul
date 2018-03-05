@@ -17,7 +17,7 @@ All the default variables are defined in [*defaults/main.yml*][2]. There are two
 
 The first is whether you want to have the the default [*_server.json*][3] template file disabled. To disable, you would comment out the **use_consul_server** variable.
 
-The second is the version of consul to install through **consul_version**. 
+The second is the version of consul to install through **consul_version**.
 
 The rest of the configurations pertains either to the the current version of consul to install and the [*_server.json*][3] default configuration under the **consul_server** dictionary variables.
 
@@ -27,9 +27,12 @@ The rest of the configurations pertains either to the the current version of con
 
 
 # consul version
-consul_version: 1.0.2
+consul_version: 1.0.6
 # use _server.json
 use_consul_server: yes
+
+# consul default bind ip
+consul_bind: "::1"
 
 # _server.json defaults
 consul_server:
@@ -41,8 +44,7 @@ consul_server:
   log_level: DEBUG
   # host node name
   node_name: ChangeMe
-  # which ip to bind to
-  bind: 0.0.0.0
+
 ```
 
 Usage
