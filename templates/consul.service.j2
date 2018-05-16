@@ -9,8 +9,7 @@ User=consul
 Group=consul
 Restart=on-failure
 ExecStart={{ consul_bin_path }}/consul agent \
-  -config-dir {{ consul_config_path }} \
-  -bind {{ consul_bind_ip }}
+  -config-dir {{ consul_config_path }}
 
 ExecReload=/usr/bin/kill -s SIGINT $MAINPID
 

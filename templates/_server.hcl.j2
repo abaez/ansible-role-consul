@@ -8,6 +8,8 @@ node_name = "{{ consul_server.node_name }}"
 
 server = true
 
+bind_addr = "{{ consul_bind }}"
+
 bootstrap_expect = 1
 
 enable_script_checks = true
